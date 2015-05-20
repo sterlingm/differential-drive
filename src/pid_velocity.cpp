@@ -105,6 +105,7 @@ public:
     void targetCallback(std_msgs::Float32 message) {
       target = message.data;
       ticks_since_target = 0;
+      prev_pid_time = ros::Time::now();
       //ROS_INFO("Got target callback %f", message.data);
     }
 
